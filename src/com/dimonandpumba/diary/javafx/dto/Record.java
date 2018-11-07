@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.dao;
+package com.dimonandpumba.diary.javafx.dto;
 
 public class Record {
     private String subject;

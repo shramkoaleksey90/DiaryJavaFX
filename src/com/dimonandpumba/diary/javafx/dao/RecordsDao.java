@@ -1,5 +1,6 @@
 package com.dimonandpumba.diary.javafx.dao;
 
+import com.dimonandpumba.diary.javafx.dto.Record;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
