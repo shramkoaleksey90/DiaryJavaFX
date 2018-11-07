@@ -1,10 +1,9 @@
 package com.dimonandpumba.diary.javafx.dao;
 
-import com.dimonandpumba.diary.javafx.interfaces.Diary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class CollectionRecords implements Diary {
+public class RecordsDao implements Dao {
     private ObservableList<Record> recordList = FXCollections.observableArrayList();
     @Override
     public void add(Record record) {
