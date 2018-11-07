@@ -33,18 +33,7 @@ public class MainController {
 
     public void initComboBox() {
         monthComboBox.getItems().addAll(
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
+                MainHelper.ALL_MONTHS_NAMES
         );
         monthComboBox.setValue("January");
     }
