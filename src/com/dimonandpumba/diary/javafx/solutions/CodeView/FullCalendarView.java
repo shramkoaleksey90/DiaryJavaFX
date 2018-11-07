@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.Solutions.CodeView;
+package com.dimonandpumba.diary.javafx.solutions.CodeView;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

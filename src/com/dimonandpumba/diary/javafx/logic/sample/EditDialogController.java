@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.Logic.sample;
+package com.dimonandpumba.diary.javafx.logic.sample;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;

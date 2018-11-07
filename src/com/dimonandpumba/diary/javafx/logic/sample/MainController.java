@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.Logic.sample;
+package com.dimonandpumba.diary.javafx.logic.sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,7 +56,7 @@ public class MainController {
             addButton.setText("showing");
 
             Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../../UI/fxml/edit.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../../ui/fxml/edit.fxml"));
             stage.setTitle("Add Event");
             stage.setResizable(false);
             stage.setScene(new Scene(root));

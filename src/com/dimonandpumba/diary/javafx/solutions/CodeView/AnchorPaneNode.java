@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.Solutions.CodeView;
+package com.dimonandpumba.diary.javafx.solutions.CodeView;
 
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;

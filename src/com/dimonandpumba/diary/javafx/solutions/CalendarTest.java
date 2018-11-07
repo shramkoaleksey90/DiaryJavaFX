@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.Solutions;
+package com.dimonandpumba.diary.javafx.solutions;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
