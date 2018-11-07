@@ -24,4 +24,9 @@ public class Record {
     public void setExposition(String exposition) {
         this.exposition = exposition;
     }
+
+    @Override
+    public String toString() {
+        return String.format("subject = %s  exposition = %s", subject, exposition);
+    }
 }
