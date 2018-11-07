@@ -6,11 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.annotation.Nonnull;
+
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(@Nonnull Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../../ui/fxml/main.fxml"));
         primaryStage.setTitle("DiaryJavaFX");
         Scene  scene = new Scene(root, 628, 501);
