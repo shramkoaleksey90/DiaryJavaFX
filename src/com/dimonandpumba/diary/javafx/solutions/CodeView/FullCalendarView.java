@@ -11,11 +11,12 @@ import javafx.scene.text.Text;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FullCalendarView {
 
-    private ArrayList<AnchorPaneNode> allCalendarDays = new ArrayList<>(35);
+    private List<AnchorPaneNode> allCalendarDays = new ArrayList(35);
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
@@ -116,11 +117,11 @@ public class FullCalendarView {
         return view;
     }
 
-    public ArrayList<AnchorPaneNode> getAllCalendarDays() {
+    public List<AnchorPaneNode> getAllCalendarDays() {
         return allCalendarDays;
     }
 
-    public void setAllCalendarDays(ArrayList<AnchorPaneNode> allCalendarDays) {
+    public void setAllCalendarDays(List<AnchorPaneNode> allCalendarDays) {
         this.allCalendarDays = allCalendarDays;
     }
 }
