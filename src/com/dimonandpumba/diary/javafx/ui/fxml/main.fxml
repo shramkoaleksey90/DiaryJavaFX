@@ -16,7 +16,7 @@
          <children>
             <HBox layoutX="3.0" layoutY="3.0">
                <children>
-                  <ComboBox fx:id="monthComboBox" editable="true" layoutX="5.0" layoutY="3.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="420.0" AnchorPane.topAnchor="3.0">
+                  <ComboBox fx:id="monthComboBox" editable="false" layoutX="5.0" layoutY="3.0" prefWidth="150.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="420.0" AnchorPane.topAnchor="3.0">
                      <padding>
                         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
                      </padding>

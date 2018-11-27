@@ -1,6 +1,7 @@
 package com.dimonandpumba.diary.javafx.logic.sample;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -33,14 +34,22 @@ public class MainController {
     private void initialize (){
         LocalDate dateToday = LocalDate.now();
         initCalendar("November",dateToday);
-        initComboBox();
+        initComboBox(dateToday.getMonthValue(),dateToday);
     }
 
-    public void initComboBox() {
+    public void initComboBox(int monthValue, LocalDate dateToday) {
         monthComboBox.getItems().addAll(
                 MainHelper.ALL_MONTHS_NAMES
         );
-        monthComboBox.setValue("January");
+        monthComboBox.getSelectionModel().select(monthValue-1);
+        monthComboBox.setVisibleRowCount(5);
+        initCalendar(monthComboBox.getValue().toString(),dateToday);
+        monthComboBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                initCalendar(monthComboBox.getValue().toString(),dateToday);
+            }
+        });
     }
     private void initCalendar(String month, LocalDate date) {
         date = LocalDate.of(date.getYear(), Month.valueOf(month.toUpperCase()), 1);
