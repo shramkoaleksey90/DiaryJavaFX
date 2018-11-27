@@ -9,10 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
 
 public class MainController {
     @FXML
@@ -28,6 +31,8 @@ public class MainController {
 
     @FXML
     private void initialize (){
+        LocalDate dateToday = LocalDate.now();
+        initCalendar("November",dateToday);
         initComboBox();
     }
 
@@ -36,6 +41,19 @@ public class MainController {
                 MainHelper.ALL_MONTHS_NAMES
         );
         monthComboBox.setValue("January");
+    }
+    private void initCalendar(String month, LocalDate date) {
+        date = LocalDate.of(date.getYear(), Month.valueOf(month.toUpperCase()), 1);
+        while (!date.getDayOfWeek().toString().equals("MONDAY") ) {
+            date = date.minusDays(1);
+        }
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 7; j++) {
+                Text text =  new Text(String.valueOf(date.getDayOfMonth()));
+                GrdPane.add(text, j, i);
+                date = date.plusDays(1);
+            }
+        }
     }
 
     public void showAddDialog(ActionEvent actionEvent) {
