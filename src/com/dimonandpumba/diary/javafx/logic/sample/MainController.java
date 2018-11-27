@@ -33,7 +33,6 @@ public class MainController {
     @FXML
     private void initialize (){
         LocalDate dateToday = LocalDate.now();
-        initCalendar("November",dateToday);
         initComboBox(dateToday.getMonthValue(),dateToday);
     }
 
