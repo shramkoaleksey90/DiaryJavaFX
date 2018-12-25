@@ -30,17 +30,31 @@ public class MainController {
     @FXML
     public ComboBox monthComboBox;
 
+    private AnchorPaneCalendar anchorPaneCalendar = new AnchorPaneCalendar();
+
     @FXML
     private void initialize (){
         LocalDate dateToday = LocalDate.now();
-        initComboBox(dateToday.getMonthValue(),dateToday);
+        getGrinPane();
+        initComboBox(dateToday);
     }
 
-    public void initComboBox(int monthValue, LocalDate dateToday) {
+    private void getGrinPane() {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 7; j++) {
+                AnchorPaneCalendar ap = new AnchorPaneCalendar();
+                ap.setPrefSize(200,200);
+                GrdPane.add(ap,j,i);
+                anchorPaneCalendar.addElementToList(ap);
+            }
+        }
+    }
+
+    private void initComboBox(LocalDate dateToday) {
         monthComboBox.getItems().addAll(
                 MainHelper.ALL_MONTHS_NAMES
         );
-        monthComboBox.getSelectionModel().select(monthValue-1);
+        monthComboBox.getSelectionModel().select(dateToday.getMonthValue()-1);
         monthComboBox.setVisibleRowCount(5);
         initCalendar(monthComboBox.getValue().toString(),dateToday);
         monthComboBox.setOnAction(new EventHandler<ActionEvent>() {
@@ -55,12 +69,15 @@ public class MainController {
         while (!date.getDayOfWeek().toString().equals("MONDAY") ) {
             date = date.minusDays(1);
         }
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 7; j++) {
-                Text text =  new Text(String.valueOf(date.getDayOfMonth()));
-                GrdPane.add(text, j, i);
-                date = date.plusDays(1);
+        for (AnchorPaneCalendar ap :  anchorPaneCalendar.getAllCalendarDays()) {
+            if (ap.getChildren().size() != 0) {
+                ap.getChildren().remove(0);
             }
+            Text txt =  new Text(String.valueOf(date.getDayOfMonth()));
+            ap.setTopAnchor(txt, 5.0);
+            ap.setLeftAnchor(txt, 5.0);
+            ap.getChildren().add(txt);
+            date = date.plusDays(1);
         }
     }
 
@@ -81,7 +98,5 @@ public class MainController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
