@@ -11,26 +11,21 @@ import javax.annotation.Nonnull;
 
 public class Main extends Application {
 
+    public static final int WIDTH = 628;
+    public static final int HEIGHT = 501;
+    public static final String PATH = "../../ui/fxml/main.fxml";
+    public static final String APP_NAME = "DiaryJavaFX";
+
     @Override
-    public void start(@Nonnull Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../ui/fxml/main.fxml"));
-        primaryStage.setTitle("DiaryJavaFX");
-        Scene  scene = new Scene(root, 628, 501);
+    public void start(@Nonnull Stage primaryStage) throws Exception {
+        final Parent root = FXMLLoader.load(getClass().getResource(PATH));
+        primaryStage.setTitle(APP_NAME);
+        final Scene scene = new Scene(root, WIDTH, HEIGHT);
         scene.getStylesheets().add(0, "com/dimonandpumba/diary/ui/styles/main.css");
         primaryStage.setScene(scene);
-        //primaryStage.setMinWidth(400);
-        //primaryStage.setMinHeight(400);
         primaryStage.setResizable(false);
         primaryStage.show();
-       // testData();
     }
-/*
-    private void testData() {
-        RecordsIDao recordBook = new RecordsIDao();
-        recordBook.fillTestData();
-        recordBook.print();
-    }
-*/
 
     public static void main(String[] args) {
         launch(args);
