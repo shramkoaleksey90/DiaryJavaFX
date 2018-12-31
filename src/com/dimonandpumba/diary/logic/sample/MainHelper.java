@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.logic.sample;
+package com.dimonandpumba.diary.logic.sample;
 
 public final class MainHelper {
     public static final String[] ALL_MONTHS_NAMES = {

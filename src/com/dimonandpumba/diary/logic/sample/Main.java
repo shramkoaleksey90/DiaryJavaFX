@@ -1,4 +1,4 @@
-package com.dimonandpumba.diary.javafx.logic.sample;
+package com.dimonandpumba.diary.logic.sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../../ui/fxml/main.fxml"));
         primaryStage.setTitle("DiaryJavaFX");
         Scene  scene = new Scene(root, 628, 501);
-        scene.getStylesheets().add(0, "com/dimonandpumba/diary/javafx/ui/styles/main.css");
+        scene.getStylesheets().add(0, "com/dimonandpumba/diary/ui/styles/main.css");
         primaryStage.setScene(scene);
         //primaryStage.setMinWidth(400);
         //primaryStage.setMinHeight(400);

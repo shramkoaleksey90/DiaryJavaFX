@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<SplitPane dividerPositions="0.13333333333333333" orientation="VERTICAL" prefHeight="497.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dimonandpumba.diary.javafx.logic.sample.MainController">
+<SplitPane dividerPositions="0.13333333333333333" orientation="VERTICAL" prefHeight="497.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dimonandpumba.diary.logic.sample.MainController">
    <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="562.0">
          <children>
