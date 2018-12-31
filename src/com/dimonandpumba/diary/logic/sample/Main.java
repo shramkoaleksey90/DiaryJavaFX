@@ -26,7 +26,7 @@ public class Main extends Application {
     }
 /*
     private void testData() {
-        RecordsDao recordBook = new RecordsDao();
+        RecordsIDao recordBook = new RecordsIDao();
         recordBook.fillTestData();
         recordBook.print();
     }

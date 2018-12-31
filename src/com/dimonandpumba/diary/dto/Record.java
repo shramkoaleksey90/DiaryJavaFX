@@ -1,8 +1,11 @@
 package com.dimonandpumba.diary.dto;
 
+import javax.annotation.concurrent.Immutable;
+
+@Immutable
 public class Record {
-    private String subject;
-    private String exposition;
+    private final String subject;
+    private final String exposition;
 
     public Record(String subject, String exposition) {
         this.subject = subject;
@@ -13,16 +16,8 @@ public class Record {
         return subject;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
     public String getExposition() {
         return exposition;
-    }
-
-    public void setExposition(String exposition) {
-        this.exposition = exposition;
     }
 
     @Override

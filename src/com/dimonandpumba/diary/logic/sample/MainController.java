@@ -15,6 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -28,12 +29,12 @@ public class MainController {
     @FXML
     private Button changeButton;
     @FXML
-    public ComboBox monthComboBox;
+    public ComboBox<Month> monthComboBox;
 
     private AnchorPaneCalendar anchorPaneCalendar = new AnchorPaneCalendar();
 
     @FXML
-    private void initialize (){
+    private void initialize() {
         LocalDate dateToday = LocalDate.now();
         getGrinPane();
         initComboBox(dateToday);
@@ -43,8 +44,8 @@ public class MainController {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 7; j++) {
                 AnchorPaneCalendar ap = new AnchorPaneCalendar();
-                ap.setPrefSize(200,200);
-                GrdPane.add(ap,j,i);
+                ap.setPrefSize(200, 200);
+                GrdPane.add(ap, j, i);
                 anchorPaneCalendar.addElementToList(ap);
             }
         }
@@ -52,28 +53,29 @@ public class MainController {
 
     private void initComboBox(LocalDate dateToday) {
         monthComboBox.getItems().addAll(
-                MainHelper.ALL_MONTHS_NAMES
+                MainHelper.MONTHS
         );
-        monthComboBox.getSelectionModel().select(dateToday.getMonthValue()-1);
+        monthComboBox.getSelectionModel().select(dateToday.getMonthValue() - 1);
         monthComboBox.setVisibleRowCount(5);
-        initCalendar(monthComboBox.getValue().toString(),dateToday);
+        initCalendar(monthComboBox.getValue().toString(), dateToday);
         monthComboBox.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                initCalendar(monthComboBox.getValue().toString(),dateToday);
+                initCalendar(monthComboBox.getValue().toString(), dateToday);
             }
         });
     }
+
     private void initCalendar(String month, LocalDate date) {
         date = LocalDate.of(date.getYear(), Month.valueOf(month.toUpperCase()), 1);
-        while (!date.getDayOfWeek().toString().equals("MONDAY") ) {
+        while (date.getDayOfWeek() != DayOfWeek.MONDAY) {
             date = date.minusDays(1);
         }
-        for (AnchorPaneCalendar ap :  anchorPaneCalendar.getAllCalendarDays()) {
-            if (ap.getChildren().size() != 0) {
+        for (AnchorPaneCalendar ap : anchorPaneCalendar.getAllCalendarDays()) {
+            if (!ap.getChildren().isEmpty()) {
                 ap.getChildren().remove(0);
             }
-            Text txt =  new Text(String.valueOf(date.getDayOfMonth()));
+            Text txt = new Text(String.valueOf(date.getDayOfMonth()));
             ap.setTopAnchor(txt, 5.0);
             ap.setLeftAnchor(txt, 5.0);
             ap.getChildren().add(txt);
@@ -93,7 +95,7 @@ public class MainController {
             stage.setResizable(false);
             stage.setScene(new Scene(root));
             stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
+            stage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
