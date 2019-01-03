@@ -35,6 +35,7 @@ public class MainController {
     public ComboBox<Month> monthComboBox;
 
     private AnchorPaneCalendar anchorPaneCalendar = new AnchorPaneCalendar();
+    private static final String PATH = "../../ui/fxml/edit.fxml";
 
     @FXML
     private void initialize() {
@@ -97,7 +98,7 @@ public class MainController {
             addButton.setText("showing");
 
             final Stage stage = new Stage();
-            final Parent root = FXMLLoader.load(getClass().getResource("../../ui/fxml/edit.fxml"));
+            final Parent root = FXMLLoader.load(getClass().getResource(PATH));
             stage.setTitle("Add Event");
             stage.setResizable(false);
             stage.setScene(new Scene(root));

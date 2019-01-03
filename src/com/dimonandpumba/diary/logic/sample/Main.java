@@ -11,10 +11,10 @@ import javax.annotation.Nonnull;
 
 public class Main extends Application {
 
-    public static final int WIDTH = 628;
-    public static final int HEIGHT = 501;
-    public static final String PATH = "../../ui/fxml/main.fxml";
-    public static final String APP_NAME = "DiaryJavaFX";
+    private static final int WIDTH = 628;
+    private static final int HEIGHT = 501;
+    private static final String PATH = "../../ui/fxml/main.fxml";
+    private static final String APP_NAME = "DiaryJavaFX";
 
     @Override
     public void start(@Nonnull Stage primaryStage) throws Exception {
