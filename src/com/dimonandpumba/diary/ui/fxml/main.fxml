@@ -60,39 +60,39 @@
                      <children>
                         <HBox prefHeight="33.0" prefWidth="626.0">
                            <children>
-                              <AnchorPane prefHeight="33.0" prefWidth="94.0">
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="25.0" layoutY="6.0" text="Monday" />
+                                    <Label layoutX="25.0" layoutY="8.0" text="Monday" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="35.0" layoutY="8.0" text="Tuesday" />
+                                    <Label layoutX="25.0" layoutY="8.0" text="Tuesday" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="17.0" layoutY="8.0" text="Wednesday" />
+                                    <Label layoutX="15.0" layoutY="8.0" text="Wednesday" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="11.0" text="Thursday" />
+                                    <Label layoutX="25.0" layoutY="8.0" text="Thursday" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="22.0" layoutY="6.0" text="Friday" />
+                                    <Label layoutX="25.0" layoutY="8.0" text="Friday" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="20.0" layoutY="6.0" text="Sunday" />
+                                    <Label layoutX="25.0" layoutY="8.0" text="Saturday" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="23.0" layoutY="8.0" text="Saturday" />
+                                    <Label layoutX="25.0" layoutY="8.0" text="Sunday" />
                                  </children>
                               </AnchorPane>
                            </children>
